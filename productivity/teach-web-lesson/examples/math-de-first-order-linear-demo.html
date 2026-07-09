@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN" data-standalone="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数学一｜一阶线性微分方程识别</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="../assets/teach-components.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script defer src="../assets/teach-lesson.js"></script>
+</head>
+<body class="theme-math lesson-page">
+  <div class="lesson-shell">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">
+          <span class="badge">数学一</span>
+          <span class="badge">高数 · 微分方程</span>
+          <span class="badge">基础必会</span>
+        </div>
+        <h1>一阶线性微分方程：先识别，再套公式</h1>
+        <p>这页只解决一个能力：看到题目，能在 10 秒内判断它是不是一阶线性，并知道下一步该怎么化标准形。</p>
+        <div class="hero-grid">
+          <div class="hero-stat"><b>预计用时</b><span>12 分钟</span></div>
+          <div class="hero-stat"><b>考研定位</b><span>小题常考 / 大题工具</span></div>
+          <div class="hero-stat"><b>本页目标</b><span>识别 + 标准形</span></div>
+          <div class="hero-stat"><b>下一步</b><span>伯努利方程</span></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <main class="content">
+        <section class="section" id="goal">
+          <h2 data-index="01">学完你要拿到什么</h2>
+          <p class="lead">你不需要一上来背一堆方程类型。先把一阶线性这类高频基础型抓稳：它长得像 \( y' + P(x)y = Q(x) \)。</p>
+          <div class="callout"><strong>一句话抓手：</strong>未知函数 \(y\) 和导数 \(y'\) 都只出现一次，没有 \(y^2\)、\(yy'\)、\(\sin y\) 这种非线性东西。</div>
+        </section>
+
+        <section class="section" id="concept">
+          <h2 data-index="02">核心概念</h2>
+          <p>一阶线性微分方程的关键不是“公式很长”，而是先把题目化成标准形。标准形右边只允许是 \(x\) 的函数。</p>
+          <div class="grid-2">
+            <div class="info-card"><h3>看到什么</h3><p>同时有 \(y'\) 和 \(y\)，并且它们都是一次。</p></div>
+            <div class="info-card"><h3>立刻做什么</h3><p>先除掉 \(y'\) 前面的系数，整理成 \(y' + P(x)y = Q(x)\)。</p></div>
+          </div>
+        </section>
+
+        <section class="section" id="formula">
+          <h2 data-index="03">公式卡</h2>
+          <article class="formula-card">
+            <div class="formula-head"><h3>一阶线性微分方程通解</h3><button class="copy-btn" data-copy="#formula-latex">复制公式</button></div>
+            <div class="formula-body">
+              <div class="formula-main" id="formula-latex">
+                \[
+                y=e^{-\int P(x)\,dx}\left(\int Q(x)e^{\int P(x)\,dx}\,dx+C\right)
+                \]
+              </div>
+              <dl class="formula-meta">
+                <dt>标准形式</dt><dd>\(y' + P(x)y = Q(x)\)</dd>
+                <dt>适用条件</dt><dd>未知函数 \(y\) 与 \(y'\) 均为一次，且系数只依赖 \(x\)。</dd>
+                <dt>识别关键词</dt><dd>\(y'\)、\(y\)、无 \(y^2\)、无 \(yy'\)、无 \(\sin y\)。</dd>
+                <dt>易错点</dt><dd>公式前必须先化标准形，不要漏除 \(y'\) 的系数。</dd>
+              </dl>
+            </div>
+          </article>
+        </section>
+
+        <section class="section" id="example">
+          <h2 data-index="04">例题拆解</h2>
+          <article class="example-card">
+            <div class="example-title">判断并求解：\( y' + 2y = e^{-x} \)</div>
+            <div class="example-body">
+              <div class="steps">
+                <div class="step"><div><strong>第一眼判断</strong><br>它已经是 \(y' + P(x)y = Q(x)\)，其中 \(P(x)=2\)，\(Q(x)=e^{-x}\)。</div></div>
+                <div class="step"><div><strong>代入通解</strong><br>\(e^{-\int 2\,dx}=e^{-2x}\)，积分因子部分为 \(e^{2x}\)。</div></div>
+                <div class="step"><div><strong>整理答案</strong><br>\[y=e^{-2x}\left(\int e^{-x}e^{2x}\,dx+C\right)=e^{-x}+Ce^{-2x}\]</div></div>
+              </div>
+              <details class="reveal"><summary>展开复盘</summary><div class="reveal-body">这题没有难点，重点是确认它已经是标准形。真正容易错的是题目给成 \(a(x)y'+b(x)y=c(x)\) 时忘记先除以 \(a(x)\)。</div></details>
+            </div>
+          </article>
+        </section>
+
+        <section class="section" id="traps">
+          <h2 data-index="05">易错点</h2>
+          <div class="grid-3">
+            <div class="info-card"><h3>没化标准形</h3><p>看到 \(x y' + y = x^2\) 不能直接套，要先除以 \(x\)。</p></div>
+            <div class="info-card"><h3>把伯努利认成线性</h3><p>\(y' + P(x)y = Q(x)y^n\) 当 \(n\ne0,1\) 时不是一阶线性。</p></div>
+            <div class="info-card"><h3>积分常数乱放</h3><p>最后统一写一个 \(C\)，别在中间积分反复加常数。</p></div>
+          </div>
+        </section>
+
+        <section class="section" id="quiz">
+          <h2 data-index="06">即时自测</h2>
+          <article class="quiz-card" data-feedback-correct="对，它要先除以 x，才能进入一阶线性标准形。" data-feedback-wrong="注意看 y 和 y' 是否都是一次，以及是否可以化成标准形。">
+            <div class="quiz-title">下面哪个可以直接或整理成一阶线性微分方程？</div>
+            <div class="quiz-body">
+              <div class="choice-grid">
+                <button class="choice" data-correct="false">\(y'=xy^2\)</button>
+                <button class="choice" data-correct="true">\(xy'+y=x^2\)</button>
+                <button class="choice" data-correct="false">\(y'+y^2=x\)</button>
+                <button class="choice" data-correct="false">\(y'=\sin y\)</button>
+              </div>
+              <div class="feedback"></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="section" id="review">
+          <h2 data-index="07">复盘清单</h2>
+          <div class="callout success"><strong>离开本页前：</strong>你要能说出标准形、识别条件、以及“先除掉 \(y'\) 系数”这个动作。</div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <div class="toc-title">本页导航</div>
+          <a href="#goal">01 学习目标</a>
+          <a href="#concept">02 核心概念</a>
+          <a href="#formula">03 公式方法</a>
+          <a href="#example">04 例题拆解</a>
+          <a href="#traps">05 易错点</a>
+          <a href="#quiz">06 即时自测</a>
+          <a href="#review">07 复盘清单</a>
+        </div>
+        <div class="mini-card"><div class="toc-title">阅读进度</div><div class="progress-wrap"><div class="progress-bar"></div></div></div>
+        <div class="next-box"><div class="toc-title">建议动作</div><p>拿 3 道微分方程题，只做“类型判断 + 化标准形”，先不要急着算到底。</p></div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

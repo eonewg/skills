@@ -1,8 +1,10 @@
-# Skill Card
+# Eone Skills Collection
 
-A public, sanitized, category-first collection of agent skills for research, productivity, coding, media, learning, personal knowledge workflows, and platform integrations.
+A categorized public skill library.
 
-- Skills packaged: 64
-- Format: Hermes/OpenClaw-style `SKILL.md` directories
-- Privacy: generated redaction pass for personal identifiers, local paths, emails, chat IDs, and real-looking secrets
-- Attribution: per-skill `THIRD_PARTY_SOURCES.md` plus root `NOTICE.md`
+## Included skills
+
+- `productivity/pdf-ocr-searchable` — searchable PDF OCR workflows.
+- `productivity/teach-web-lesson` — research-first standalone HTML lesson generation.
+
+MIT licensed.

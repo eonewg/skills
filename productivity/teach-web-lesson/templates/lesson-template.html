@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{SUBJECT}}｜{{LESSON_TITLE}}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="../assets/teach-components.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script defer src="../assets/teach-lesson.js"></script>
+</head>
+<body class="theme-math lesson-page">
+  <div class="lesson-shell">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">
+          <span class="badge">{{SUBJECT}}</span>
+          <span class="badge">{{CHAPTER}}</span>
+          <span class="badge">{{DIFFICULTY}}</span>
+        </div>
+        <h1>{{LESSON_TITLE}}</h1>
+        <p>{{ONE_SENTENCE_PROMISE}}</p>
+        <div class="hero-grid">
+          <div class="hero-stat"><b>预计用时</b><span>{{TIME}}</span></div>
+          <div class="hero-stat"><b>考研定位</b><span>{{EXAM_ROLE}}</span></div>
+          <div class="hero-stat"><b>本页目标</b><span>{{OUTCOME}}</span></div>
+          <div class="hero-stat"><b>下一步</b><span>{{NEXT_STEP}}</span></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout" data-sidebar="expanded">
+      <aside class="sidebar" id="sidebar">
+        <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-expanded="true" aria-label="折叠侧边栏" title="折叠侧边栏">←</button>
+        <div class="sidebar-content">
+          <div class="toc">
+            <div class="toc-title">本页导航</div>
+            <a href="#goal">01 学习目标</a>
+            <a href="#concept">02 核心概念</a>
+            <a href="#formula">03 公式方法</a>
+            <a href="#example">04 例题拆解</a>
+            <a href="#traps">05 易错点</a>
+            <a href="#quiz">06 即时自测</a>
+            <a href="#review">07 复盘清单</a>
+          </div>
+          <div class="mini-card"><div class="toc-title">阅读进度</div><div class="progress-wrap"><div class="progress-bar"></div></div></div>
+          <div class="next-box"><div class="toc-title">建议动作</div><p>{{SIDEBAR_ACTION}}</p></div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section class="section" id="goal">
+          <h2 data-index="01">学完你要拿到什么</h2>
+          <p class="lead">{{LEARNING_GOAL}}</p>
+          <div class="callout"><strong>一句话抓手：</strong>{{CORE_HOOK}}</div>
+        </section>
+
+        <section class="section" id="concept">
+          <h2 data-index="02">核心概念</h2>
+          <p>{{CONCEPT_EXPLANATION}}</p>
+          <div class="grid-2">
+            <div class="info-card"><h3>看到什么</h3><p>{{RECOGNITION_CUE}}</p></div>
+            <div class="info-card"><h3>立刻做什么</h3><p>{{ACTION}}</p></div>
+          </div>
+        </section>
+
+        <section class="section" id="formula">
+          <h2 data-index="03">公式 / 方法卡</h2>
+          <article class="formula-card">
+            <div class="formula-head">
+              <h3>{{FORMULA_NAME}}</h3>
+              <button class="copy-btn" data-copy="#formula-latex">复制公式</button>
+            </div>
+            <div class="formula-body">
+              <div class="formula-main" id="formula-latex">
+                \[
+                {{LATEX_FORMULA}}
+                \]
+              </div>
+              <dl class="formula-meta">
+                <dt>标准形式</dt><dd>\({{STANDARD_FORM}}\)</dd>
+                <dt>适用条件</dt><dd>{{PRECONDITIONS}}</dd>
+                <dt>识别关键词</dt><dd>{{CUES}}</dd>
+                <dt>易错点</dt><dd>{{TRAP}}</dd>
+              </dl>
+            </div>
+          </article>
+        </section>
+
+        <section class="section" id="example">
+          <h2 data-index="04">例题拆解</h2>
+          <article class="example-card">
+            <div class="example-title">{{EXAMPLE_TITLE}}</div>
+            <div class="example-body">
+              <p>{{EXAMPLE_PROBLEM}}</p>
+              <div class="steps">
+                <div class="step"><div><strong>第一眼判断</strong><br>{{STEP_1}}</div></div>
+                <div class="step"><div><strong>关键变形</strong><br>{{STEP_2}}</div></div>
+                <div class="step"><div><strong>标准求解</strong><br>{{STEP_3}}</div></div>
+              </div>
+              <details class="reveal"><summary>展开完整答案</summary><div class="reveal-body">{{FULL_SOLUTION}}</div></details>
+            </div>
+          </article>
+        </section>
+
+        <section class="section" id="traps">
+          <h2 data-index="05">易错点</h2>
+          <div class="grid-3">
+            <div class="info-card"><h3>错法 1</h3><p>{{TRAP_1}}</p></div>
+            <div class="info-card"><h3>错法 2</h3><p>{{TRAP_2}}</p></div>
+            <div class="info-card"><h3>错法 3</h3><p>{{TRAP_3}}</p></div>
+          </div>
+        </section>
+
+        <section class="section" id="quiz">
+          <h2 data-index="06">即时自测</h2>
+          <article class="quiz-card" data-feedback-correct="判断对了。" data-feedback-wrong="先回看识别条件，再判断一次。">
+            <div class="quiz-title">{{QUIZ_QUESTION}}</div>
+            <div class="quiz-body">
+              <div class="choice-grid">
+                <button class="choice" data-correct="false">{{OPTION_A}}</button>
+                <button class="choice" data-correct="true">{{OPTION_B}}</button>
+                <button class="choice" data-correct="false">{{OPTION_C}}</button>
+                <button class="choice" data-correct="false">{{OPTION_D}}</button>
+              </div>
+              <div class="feedback"></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="section" id="review">
+          <h2 data-index="07">复盘清单</h2>
+          <div class="callout success"><strong>离开本页前：</strong>{{REVIEW_CHECKLIST}}</div>
+        </section>
+
+        <nav class="footer-nav">
+          <a href="{{PREV_LINK}}">← 上一课<br><strong>{{PREV_TITLE}}</strong></a>
+          <a href="{{NEXT_LINK}}">下一课 →<br><strong>{{NEXT_TITLE}}</strong></a>
+        </nav>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

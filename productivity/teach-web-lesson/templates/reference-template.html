@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{SUBJECT}}｜{{REFERENCE_TITLE}}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="../assets/teach-components.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script defer src="../assets/teach-lesson.js"></script>
+</head>
+<body class="theme-math reference-page">
+  <div class="lesson-shell">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">
+          <span class="badge">{{SUBJECT}}</span>
+          <span class="badge">Reference</span>
+          <span class="badge">速查</span>
+        </div>
+        <h1>{{REFERENCE_TITLE}}</h1>
+        <p>{{REFERENCE_PROMISE}}</p>
+      </div>
+    </header>
+
+    <div class="layout">
+      <main class="content">
+        <section class="section" id="map">
+          <h2 data-index="01">一屏总览</h2>
+          <div class="ref-grid">
+            <div class="ref-item"><h3>{{ITEM_1_TITLE}}</h3><p>{{ITEM_1_BODY}}</p></div>
+            <div class="ref-item"><h3>{{ITEM_2_TITLE}}</h3><p>{{ITEM_2_BODY}}</p></div>
+            <div class="ref-item"><h3>{{ITEM_3_TITLE}}</h3><p>{{ITEM_3_BODY}}</p></div>
+            <div class="ref-item"><h3>{{ITEM_4_TITLE}}</h3><p>{{ITEM_4_BODY}}</p></div>
+          </div>
+        </section>
+
+        <section class="section" id="formulas">
+          <h2 data-index="02">公式 / 规则速查</h2>
+          <article class="formula-card">
+            <div class="formula-head"><h3>{{FORMULA_NAME}}</h3></div>
+            <div class="formula-body">
+              <div class="formula-main">
+                \[
+                {{LATEX_FORMULA}}
+                \]
+              </div>
+              <dl class="formula-meta">
+                <dt>何时用</dt><dd>{{WHEN_TO_USE}}</dd>
+                <dt>怎么认</dt><dd>{{HOW_TO_RECOGNIZE}}</dd>
+                <dt>别踩坑</dt><dd>{{COMMON_TRAP}}</dd>
+              </dl>
+            </div>
+          </article>
+        </section>
+
+        <section class="section" id="decision">
+          <h2 data-index="03">判断流程</h2>
+          <div class="steps">
+            <div class="step"><div>{{DECISION_STEP_1}}</div></div>
+            <div class="step"><div>{{DECISION_STEP_2}}</div></div>
+            <div class="step"><div>{{DECISION_STEP_3}}</div></div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <div class="toc-title">速查导航</div>
+          <a href="#map">01 一屏总览</a>
+          <a href="#formulas">02 公式规则</a>
+          <a href="#decision">03 判断流程</a>
+        </div>
+        <div class="mini-card"><div class="toc-title">阅读进度</div><div class="progress-wrap"><div class="progress-bar"></div></div></div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
