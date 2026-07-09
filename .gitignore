@@ -1,8 +1,17 @@
-.DS_Store
-__pycache__/
-*.pyc
-.venv/
+# Local/runtime files
 .env
 .env.*
+!.env.example
 *.log
-*.tmp
+*.pyc
+__pycache__/
+node_modules/
+.venv/
+venv/
+dist/
+build/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store

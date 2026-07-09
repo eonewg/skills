@@ -1,0 +1,1 @@
+{"name":"imap-smtp-mail-local","version":"1.0.0","type":"commonjs","dependencies":{"dotenv":"latest","nodemailer":"latest","imapflow":"latest"},"scripts":{"install-check":"node -e \"require('nodemailer'); require('dotenv'); require('imapflow'); console.log('ok')\""}}

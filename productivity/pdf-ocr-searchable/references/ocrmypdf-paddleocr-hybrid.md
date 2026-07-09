@@ -67,4 +67,4 @@ for needle in ["多元函数", "偏导数", "极值"]:
     print(needle, sum(1 for p in doc if needle in p.get_text()))
 ```
 
-return only the final searchable PDF named with `(ocr)` before the extension, e.g. `第十三讲(ocr).pdf`. Keep PaddleOCR `combined.md`/renamed `.md` as an internal artifact unless the user explicitly asks for Markdown or troubleshooting requires it. Mention a caveat only if the user asks about precision: the delivered PDF has OCRmyPDF's coordinate layer plus a block-level PaddleOCR semantic layer, so search is stronger than pure Tesseract while selection may include overlapping hidden text layers.
+For the user's default delivery preference, return only the final searchable PDF named with `(ocr)` before the extension, e.g. `第十三讲(ocr).pdf`. Keep PaddleOCR `combined.md`/renamed `.md` as an internal artifact unless the user explicitly asks for Markdown or troubleshooting requires it. Mention a caveat only if the user asks about precision: the delivered PDF has OCRmyPDF's coordinate layer plus a block-level PaddleOCR semantic layer, so search is stronger than pure Tesseract while selection may include overlapping hidden text layers.

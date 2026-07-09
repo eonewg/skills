@@ -1,9 +1,0 @@
-__pycache__/
-*.py[cod]
-.env
-*.env
-secrets/
-*_ocr.pdf
-*_ocr.pdf.md
-*_paddleocr/
-.DS_Store
